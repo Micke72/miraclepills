@@ -12,6 +12,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickerBtn: UIButton!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var Success: UIImageView!
+   
+    @IBAction func Buy(_ sender: Any) {
+        Success.isHidden = false
+    }
     
     let states = ["Alaska", "Arkansas", "Alabama", "California", "Maine", "New York"]
     
@@ -30,6 +37,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func stateBtnPressed(_ sender: Any) {
         statePicker.isHidden = false
+        label1.isHidden = true
+        label2.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,6 +57,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         statePickerBtn.setTitle(states[row], for: UIControlState.normal)
         statePicker.isHidden = true
+        label1.isHidden = false
+        label2.isHidden = false
     }
 
 }
